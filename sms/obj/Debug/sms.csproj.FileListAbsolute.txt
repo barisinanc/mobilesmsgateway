@@ -1,0 +1,13 @@
+D:\projeler\sms\smsgateway\sms\obj\Debug\ResolveAssemblyReference.cache
+D:\projeler\sms\smsgateway\sms\obj\Debug\sms.Form1.resources
+D:\projeler\sms\smsgateway\sms\obj\Debug\sms.Properties.Resources.resources
+D:\projeler\sms\smsgateway\sms\obj\Debug\sms.csproj.GenerateResource.Cache
+D:\projeler\sms\smsgateway\sms\bin\Debug\sms.exe
+D:\projeler\sms\smsgateway\sms\bin\Debug\sms.pdb
+D:\projeler\sms\smsgateway\sms\bin\Debug\Microsoft.WindowsMobile.dll
+D:\projeler\sms\smsgateway\sms\bin\Debug\Microsoft.WindowsMobile.PocketOutlook.dll
+D:\projeler\sms\smsgateway\sms\bin\Debug\Microsoft.WindowsMobile.xml
+D:\projeler\sms\smsgateway\sms\bin\Debug\Microsoft.WindowsMobile.PocketOutlook.xml
+D:\projeler\sms\smsgateway\sms\obj\Debug\sms.exe
+D:\projeler\sms\smsgateway\sms\obj\Debug\sms.pdb
+D:\projeler\sms\smsgateway\sms\bin\Debug\System.SR.dll

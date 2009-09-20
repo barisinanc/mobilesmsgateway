@@ -1,0 +1,8 @@
+D:\projeler\sms\smsgateway\smsclient\bin\Debug\smsclient.exe
+D:\projeler\sms\smsgateway\smsclient\bin\Debug\smsclient.pdb
+D:\projeler\sms\smsgateway\smsclient\obj\Debug\ResolveAssemblyReference.cache
+D:\projeler\sms\smsgateway\smsclient\obj\Debug\smsclient.Properties.Resources.resources
+D:\projeler\sms\smsgateway\smsclient\obj\Debug\smsclient.csproj.GenerateResource.Cache
+D:\projeler\sms\smsgateway\smsclient\obj\Debug\smsclient.exe
+D:\projeler\sms\smsgateway\smsclient\obj\Debug\smsclient.pdb
+D:\projeler\sms\smsgateway\smsclient\obj\Debug\smsclient.Form1.resources
