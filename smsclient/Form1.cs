@@ -171,5 +171,13 @@ namespace smsclient
             mesajGonder(textKime.Text, textMesaj.Text);
         }
 
+        private void baglanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DoChangeUILabelMethod("Bağlanıyor...");
+            client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            IPEndPoint iep = new IPEndPoint(IPAddress.Parse(textIP.Text), 900);
+            client.BeginConnect(iep, new AsyncCallback(Connected), client);
+        }
+
     }
 }
