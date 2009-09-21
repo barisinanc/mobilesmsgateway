@@ -15,6 +15,7 @@ using System.IO.Ports;
 using System.IO;
 using System.Xml.Serialization;
 using smsclient;
+using InTheHand.WindowsMobile;
 
 namespace sms
 {
