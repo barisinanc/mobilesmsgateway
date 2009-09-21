@@ -12,6 +12,9 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 using System.IO.Ports;
+using System.IO;
+using System.Xml.Serialization;
+using smsclient;
 
 namespace sms
 {
@@ -120,18 +123,18 @@ namespace sms
             while (true)
             {
                 recv = client.Receive(data);
-                stringData = Encoding.UTF8.GetString(data, 0, recv);
-                if (stringData == "bye")
-                    break;
-                DoChangeUILabelMethod(stringData);
-                if (stringData.StartsWith("Sms To:"))
+                if (ByteArray2Object(data) == null)
+                {
+                    stringData = Encoding.UTF8.GetString(data, 0, recv);
+                    if (stringData == "bye")
+                        break;
+                    DoChangeUILabelMethod(stringData);
+                }
+                else
                 {
 
-                    string veri = stringData.Replace("Sms ", "");
-                    string kime = veri.Split('|')[0].Replace("To:", "");
-                    string mesaj = veri.Split('|')[1].Replace("Mesaj:", "");
-
-                    Thread gonderici = new Thread(delegate { mesajGonder(mesaj, kime); });
+                    SmsSeri yeniSms = (SmsSeri)ByteArray2Object(data);
+                    Thread gonderici = new Thread(delegate { mesajGonder(yeniSms); });
                     gonderici.Start();
                 }
             }
@@ -149,8 +152,9 @@ namespace sms
             SmsMessage gelenSms = e.Message as SmsMessage;
         }
 
-        private void mesajGonder(string mesaj, string numara)
+        private void mesajGonder(SmsSeri Sms)
         {
+            /*
             SmsMessage Sms = new SmsMessage();
             Sms.Body = mesaj;
             numara.Replace(",", ";");
@@ -163,13 +167,37 @@ namespace sms
                 if (x.Length > 10)
                 { Sms.To.Add(new Recipient(x)); }
             }
-            Sms.Send();
+            */
+            SmsMessage yeniSms = new SmsMessage(Sms.To, Sms.Message);
+            yeniSms.Send();
+            DoChangeUILabelMethod("1 Sms gönderildi.");
         }
 
 
         private void menuItem1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        public static byte[] Object2ByteArray(object o)
+        {
+            MemoryStream ms = new MemoryStream();
+            XmlSerializer xmls = new XmlSerializer(typeof(SmsSeri));
+            xmls.Serialize(ms, o);
+            return ms.ToArray();
+        }
+
+        public static object ByteArray2Object(byte[] b)
+        {
+            try
+            {
+                MemoryStream ms = new MemoryStream(b);
+                XmlSerializer xmls = new XmlSerializer(typeof(SmsSeri));
+                ms.Position = 0;
+                return xmls.Deserialize(ms);
+            }
+            catch (Exception e)
+            { return null; }
         }
     }
 }

@@ -45,6 +45,7 @@
             this.textKime.Name = "textKime";
             this.textKime.Size = new System.Drawing.Size(133, 20);
             this.textKime.TabIndex = 0;
+            this.textKime.Text = "+905556827384";
             // 
             // label1
             // 

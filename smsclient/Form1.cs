@@ -9,6 +9,10 @@ using System.Windows.Forms;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
+using System.IO;
+using Microsoft.WindowsMobile.PocketOutlook;
+using System.Runtime.Serialization;
+using System.Xml.Serialization;
 namespace smsclient
 {
     public partial class Form1 : Form
@@ -21,10 +25,35 @@ namespace smsclient
             this.FormClosed += new FormClosedEventHandler(Form1_FormClosed);
         }
 
+        public static byte[] Object2ByteArray(object o)
+        {
+            MemoryStream ms = new MemoryStream();
+            XmlSerializer xmls = new XmlSerializer(typeof(SmsSeri));
+            xmls.Serialize(ms, o);
+            return ms.ToArray();
+        }
+
+        public static object ByteArray2Object(byte[] b)
+        {
+            try
+            {
+                MemoryStream ms = new MemoryStream(b);
+                XmlSerializer xmls = new XmlSerializer(typeof(SmsSeri));
+                ms.Position = 0;
+                return xmls.Deserialize(ms);
+            }
+            catch (Exception e)
+            { return null; }
+        }
+
         void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (client.Connected)
-            { baglantiKes(); }
+            try
+            {
+                if (client.Connected)
+                { baglantiKes(); }
+            }
+            catch { }
         }
         //private static TextBox newText;
 
@@ -71,8 +100,11 @@ namespace smsclient
 
         private void mesajGonder(string kime, string mesaj)
         {
-            string gidecekVeri = "Sms To:" + kime + "|Mesaj:" + mesaj + "";
-            byte[] message = Encoding.UTF8.GetBytes(gidecekVeri);
+            SmsSeri yeniSms = new SmsSeri();
+            yeniSms.To = kime;
+            yeniSms.Message = mesaj;
+            //string gidecekVeri = "Sms To:" + kime + "|Mesaj:" + mesaj + "";
+            byte[] message = Object2ByteArray(yeniSms);
             client.BeginSend(message, 0, message.Length, 0, new AsyncCallback(SendData), client);
         }
 
