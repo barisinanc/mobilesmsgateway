@@ -24,3 +24,4 @@ D:\projeler\sms\mobilesmsgateway\sms\obj\Debug\sms.Properties.Resources.resource
 D:\projeler\sms\mobilesmsgateway\sms\obj\Debug\sms.csproj.GenerateResource.Cache
 D:\projeler\sms\mobilesmsgateway\sms\obj\Debug\sms.exe
 D:\projeler\sms\mobilesmsgateway\sms\obj\Debug\sms.pdb
+D:\projeler\sms\mobilesmsgateway\sms\bin\Debug\InTheHand.WindowsMobile.dll

@@ -121,9 +121,19 @@ namespace sms
         {
             int recv;
             string stringData;
+            bool error=false;
             while (true)
             {
-                recv = client.Receive(data);
+                try
+                {
+                    recv = client.Receive(data);
+                }
+                catch (Exception e)
+                {
+                    DoChangeUILabelMethod("Bağlantı hatası. " + e);
+                    error = true;
+                    break;
+                }
                 if (ByteArray2Object(data) == null)
                 {
                     stringData = Encoding.UTF8.GetString(data, 0, recv);
@@ -139,11 +149,14 @@ namespace sms
                     gonderici.Start();
                 }
             }
-            stringData = "bye";
-            byte[] message = Encoding.UTF8.GetBytes(stringData);
-            client.Send(message);
-            client.Close();
-            DoChangeUILabelMethod("Bağlantı durduruldu.");
+            if (error == false)
+            {
+                stringData = "bye";
+                byte[] message = Encoding.UTF8.GetBytes(stringData);
+                client.Send(message);
+                client.Close();
+                DoChangeUILabelMethod("Bağlantı durduruldu.");
+            }
             return;
         }
 
