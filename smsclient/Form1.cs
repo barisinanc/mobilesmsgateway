@@ -81,7 +81,11 @@ namespace smsclient
         private void mesajGonder(string kime, string mesaj)
         {
             SmsSeri yeniSms = new SmsSeri();
-            yeniSms.To = kime;
+            string[] liste = kime.Replace(',', ';').Split(';');
+            foreach (string x in liste)
+            {
+                yeniSms.AddRecipient(x);
+            }
             yeniSms.Message = mesaj;
             //string gidecekVeri = "Sms To:" + kime + "|Mesaj:" + mesaj + "";
             byte[] message = Serialize.Object2ByteArray(yeniSms,typeof(SmsSeri));

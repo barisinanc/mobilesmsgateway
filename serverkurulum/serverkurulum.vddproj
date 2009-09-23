@@ -38,6 +38,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_36357DEA1E688C028430B91B8CC0DB57"
+        "OwnerKey" = "8:_C0CADF7F05334D3C8DDEE29448304D7F"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_594F03D50A4FD50856E240AFC6C8F86C"
         "OwnerKey" = "8:_3404B094AA2C473A9898A8894274A024"
         "MsmSig" = "8:_UNDEFINED"
@@ -46,6 +52,12 @@
         {
         "MsmKey" = "8:_5F0047806429C0135FA496271079F161"
         "OwnerKey" = "8:_CD7915EA5F2F9547EF2320C0584908EC"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_5F0047806429C0135FA496271079F161"
+        "OwnerKey" = "8:_C0CADF7F05334D3C8DDEE29448304D7F"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -93,6 +105,12 @@
         "Entry"
         {
         "MsmKey" = "8:_7BE680EA5B0095CA262891EE4DD2FFBE"
+        "OwnerKey" = "8:_C0CADF7F05334D3C8DDEE29448304D7F"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_7BE680EA5B0095CA262891EE4DD2FFBE"
         "OwnerKey" = "8:_36357DEA1E688C028430B91B8CC0DB57"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -106,6 +124,12 @@
         {
         "MsmKey" = "8:_7F2C80137AE75344D991CF2E66994DF9"
         "OwnerKey" = "8:_3404B094AA2C473A9898A8894274A024"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_7F2C80137AE75344D991CF2E66994DF9"
+        "OwnerKey" = "8:_C0CADF7F05334D3C8DDEE29448304D7F"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -195,6 +219,12 @@
         "Entry"
         {
         "MsmKey" = "8:_B903B12F7FBDB4F93EC93D6FC99D3755"
+        "OwnerKey" = "8:_C0CADF7F05334D3C8DDEE29448304D7F"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B903B12F7FBDB4F93EC93D6FC99D3755"
         "OwnerKey" = "8:_36357DEA1E688C028430B91B8CC0DB57"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -212,8 +242,20 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_C0CADF7F05334D3C8DDEE29448304D7F"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_CD7915EA5F2F9547EF2320C0584908EC"
         "OwnerKey" = "8:_EE4B306AA2F3A62ABAC32ED602A876E3"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_CD7915EA5F2F9547EF2320C0584908EC"
+        "OwnerKey" = "8:_C0CADF7F05334D3C8DDEE29448304D7F"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -226,6 +268,12 @@
         {
         "MsmKey" = "8:_EE4B306AA2F3A62ABAC32ED602A876E3"
         "OwnerKey" = "8:_3404B094AA2C473A9898A8894274A024"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_EE4B306AA2F3A62ABAC32ED602A876E3"
+        "OwnerKey" = "8:_C0CADF7F05334D3C8DDEE29448304D7F"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -727,6 +775,32 @@
             "OutputConfiguration" = "8:"
             "OutputGroupCanonicalName" = "8:Built"
             "OutputProjectGuid" = "8:{5AC9A78D-8D70-4D82-805E-1DB5EB0E3E0A}"
+            "ShowKeyOutput" = "11:TRUE"
+                "ExcludeFilters"
+                {
+                }
+            }
+            "{605BE39E-5046-48BD-AEC0-63C3A46626D5}:_C0CADF7F05334D3C8DDEE29448304D7F"
+            {
+            "SourcePath" = "8:..\\barbardataMobile\\obj\\Debug\\barbardataMobile.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_FDF4E18AFD8C4CCCB9AF410D765AF998"
+            "Condition" = "8:"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "Register" = "3:0"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            "ProjectOutputGroupRegister" = "3:0"
+            "OutputConfiguration" = "8:"
+            "OutputGroupCanonicalName" = "8:Built"
+            "OutputProjectGuid" = "8:{35F6F71E-8505-4C07-8F97-59FB6362150C}"
             "ShowKeyOutput" = "11:TRUE"
                 "ExcludeFilters"
                 {

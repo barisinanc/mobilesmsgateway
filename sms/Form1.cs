@@ -156,9 +156,14 @@ namespace sms
             }
             if (error == false)
             {
+                
                 stringData = "bye";
                 byte[] message = Encoding.UTF8.GetBytes(stringData);
-                client.Send(message);
+                try
+                {
+                    client.Send(message);
+                }
+                catch { }
                 client.Close();
                 dinle();
                 DoChangeUILabelMethod("Bağlantı durduruldu.");
@@ -175,7 +180,12 @@ namespace sms
         #endregion Sms Geldi
         private void mesajGonder(SmsSeri Sms)
         {
-            SmsMessage yeniSms = new SmsMessage(Sms.To, Sms.Message);
+            SmsMessage yeniSms = new SmsMessage();
+            yeniSms.Body = Sms.Message;
+            foreach (string x in Sms.To)
+            {
+                yeniSms.To.Add(new Recipient(x));
+            }
             yeniSms.Send();
             DoChangeUILabelMethod("1 Sms gönderildi.");
         }
