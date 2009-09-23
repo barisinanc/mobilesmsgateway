@@ -1,8 +1,0 @@
-D:\projeler\sms\mobilesmsgateway\BridgeServer\bin\Debug\BridgeServer.exe
-D:\projeler\sms\mobilesmsgateway\BridgeServer\bin\Debug\BridgeServer.pdb
-D:\projeler\sms\mobilesmsgateway\BridgeServer\obj\Debug\ResolveAssemblyReference.cache
-D:\projeler\sms\mobilesmsgateway\BridgeServer\obj\Debug\BridgeServer.Form1.resources
-D:\projeler\sms\mobilesmsgateway\BridgeServer\obj\Debug\BridgeServer.Properties.Resources.resources
-D:\projeler\sms\mobilesmsgateway\BridgeServer\obj\Debug\BridgeServer.csproj.GenerateResource.Cache
-D:\projeler\sms\mobilesmsgateway\BridgeServer\obj\Debug\BridgeServer.exe
-D:\projeler\sms\mobilesmsgateway\BridgeServer\obj\Debug\BridgeServer.pdb
