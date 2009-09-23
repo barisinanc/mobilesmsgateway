@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Microsoft.WindowsMobile.PocketOutlook;
 using System.Xml.Serialization;
 
-namespace smsclient
+namespace barbardata
 {
     [Serializable]
     [XmlTypeAttribute(Namespace = "barbardata")]

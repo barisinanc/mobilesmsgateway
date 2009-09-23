@@ -11,10 +11,9 @@ using Microsoft.WindowsMobile.PocketOutlook.MessageInterception;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
-using System.IO.Ports;
 using System.IO;
 using System.Xml.Serialization;
-using smsclient;
+using barbardataMobile;
 
 namespace sms
 {
@@ -127,7 +126,7 @@ namespace sms
             byte[] data = new byte[1024];
             int recv;
             string stringData;
-            bool error=false;
+            bool error=false;            
             while (true)
             {
                 try
@@ -140,7 +139,7 @@ namespace sms
                     error = true;
                     break;
                 }
-                if (ByteArray2Object(data) == null)
+                if (Serialize.ByteArray2Object(data, typeof(SmsSeri)) == null)
                 {
                     stringData = Encoding.UTF8.GetString(data, 0, recv);
                     if (stringData == "bye")
@@ -150,7 +149,7 @@ namespace sms
                 else
                 {
 
-                    SmsSeri yeniSms = (SmsSeri)ByteArray2Object(data);
+                    SmsSeri yeniSms = (SmsSeri)Serialize.ByteArray2Object(data,typeof(SmsSeri));
                     Thread gonderici = new Thread(delegate { mesajGonder(yeniSms); });
                     gonderici.Start();
                 }
@@ -187,25 +186,6 @@ namespace sms
             this.Close();
         }
 
-        public static byte[] Object2ByteArray(object o)
-        {
-            MemoryStream ms = new MemoryStream();
-            XmlSerializer xmls = new XmlSerializer(typeof(SmsSeri));
-            xmls.Serialize(ms, o);
-            return ms.ToArray();
-        }
-
-        public static object ByteArray2Object(byte[] b)
-        {
-            try
-            {
-                MemoryStream ms = new MemoryStream(b);
-                XmlSerializer xmls = new XmlSerializer(typeof(SmsSeri));
-                ms.Position = 0;
-                return xmls.Deserialize(ms);
-            }
-            catch (Exception e)
-            { return null; }
-        }
+       
     }
 }

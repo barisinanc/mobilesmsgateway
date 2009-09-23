@@ -13,6 +13,7 @@ using System.IO;
 using Microsoft.WindowsMobile.PocketOutlook;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
+using barbardata;
 namespace smsclient
 {
     public partial class Form1 : Form
@@ -23,27 +24,6 @@ namespace smsclient
             textIP.Text = "169.254.2.1";
             buttonBaglantiKes.Enabled = false;
             this.FormClosed += new FormClosedEventHandler(Form1_FormClosed);
-        }
-
-        public static byte[] Object2ByteArray(object o)
-        {
-            MemoryStream ms = new MemoryStream();
-            XmlSerializer xmls = new XmlSerializer(typeof(SmsSeri));
-            xmls.Serialize(ms, o);
-            return ms.ToArray();
-        }
-
-        public static object ByteArray2Object(byte[] b)
-        {
-            try
-            {
-                MemoryStream ms = new MemoryStream(b);
-                XmlSerializer xmls = new XmlSerializer(typeof(SmsSeri));
-                ms.Position = 0;
-                return xmls.Deserialize(ms);
-            }
-            catch (Exception e)
-            { return null; }
         }
 
         void Form1_FormClosed(object sender, FormClosedEventArgs e)
@@ -104,7 +84,7 @@ namespace smsclient
             yeniSms.To = kime;
             yeniSms.Message = mesaj;
             //string gidecekVeri = "Sms To:" + kime + "|Mesaj:" + mesaj + "";
-            byte[] message = Object2ByteArray(yeniSms);
+            byte[] message = Serialize.Object2ByteArray(yeniSms,typeof(SmsSeri));
             client.BeginSend(message, 0, message.Length, 0, new AsyncCallback(SendData), client);
         }
 

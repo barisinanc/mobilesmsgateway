@@ -18,3 +18,5 @@ D:\projeler\sms\mobilesmsgateway\smsclient\obj\Debug\smsclient.csproj.GenerateRe
 D:\projeler\sms\mobilesmsgateway\smsclient\obj\Debug\smsclient.exe
 D:\projeler\sms\mobilesmsgateway\smsclient\obj\Debug\smsclient.pdb
 D:\projeler\sms\mobilesmsgateway\smsclient\bin\Debug\smsclient.pdb
+D:\projeler\sms\mobilesmsgateway\smsclient\bin\Debug\barbardata.dll
+D:\projeler\sms\mobilesmsgateway\smsclient\bin\Debug\barbardata.pdb

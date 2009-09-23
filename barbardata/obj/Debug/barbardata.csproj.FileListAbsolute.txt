@@ -1,0 +1,5 @@
+D:\projeler\sms\mobilesmsgateway\barbardata\bin\Debug\barbardata.dll
+D:\projeler\sms\mobilesmsgateway\barbardata\bin\Debug\barbardata.pdb
+D:\projeler\sms\mobilesmsgateway\barbardata\obj\Debug\ResolveAssemblyReference.cache
+D:\projeler\sms\mobilesmsgateway\barbardata\obj\Debug\barbardata.dll
+D:\projeler\sms\mobilesmsgateway\barbardata\obj\Debug\barbardata.pdb

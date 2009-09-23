@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sms", "sms\sms.csproj", "{5
 EndProject
 Project("{B900F1C2-3D47-4FEC-85B3-04AAF18C3634}") = "serverkurulum", "serverkurulum\serverkurulum.vddproj", "{A9B918BA-5D83-43FD-9DB9-96102B549D70}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Barbardata", "barbardata\Barbardata.csproj", "{4CC833B1-966D-43FE-B6A0-5B7F3DF4C049}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarbardataMobile", "barbardataMobile\BarbardataMobile.csproj", "{35F6F71E-8505-4C07-8F97-59FB6362150C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{5AC9A78D-8D70-4D82-805E-1DB5EB0E3E0A}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{A9B918BA-5D83-43FD-9DB9-96102B549D70}.Debug|Any CPU.ActiveCfg = Debug
 		{A9B918BA-5D83-43FD-9DB9-96102B549D70}.Release|Any CPU.ActiveCfg = Release
+		{4CC833B1-966D-43FE-B6A0-5B7F3DF4C049}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CC833B1-966D-43FE-B6A0-5B7F3DF4C049}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CC833B1-966D-43FE-B6A0-5B7F3DF4C049}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CC833B1-966D-43FE-B6A0-5B7F3DF4C049}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35F6F71E-8505-4C07-8F97-59FB6362150C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35F6F71E-8505-4C07-8F97-59FB6362150C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35F6F71E-8505-4C07-8F97-59FB6362150C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35F6F71E-8505-4C07-8F97-59FB6362150C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
