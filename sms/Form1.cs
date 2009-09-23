@@ -15,7 +15,6 @@ using System.IO.Ports;
 using System.IO;
 using System.Xml.Serialization;
 using smsclient;
-using InTheHand.WindowsMobile;
 
 namespace sms
 {
@@ -28,6 +27,12 @@ namespace sms
             gelenSms.MessageReceived += new MessageInterceptorEventHandler(gelenSms_MessageReceived);
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            labelIP.Text += sunucuIP();
+            dinle();
+        }
+
         void gelenSms_MessageReceived(object sender, MessageInterceptorEventArgs e)
         {
             if (client.Connected)
@@ -38,7 +43,7 @@ namespace sms
                 client.Send(message);
             }
         }
-
+        #region UI Değişiklikleri
         public delegate void DoChangeUILabel(string theText);
 
         public void DoChangeUILabelMethod(string theText)
@@ -68,14 +73,9 @@ namespace sms
                 this.labelBaglanilan.Text = "Bağlanılan:" + theText;
             }
         }
+        #endregion UI Değişiklikleri
 
-        SerialPort Port = new SerialPort();
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            labelIP.Text += sunucuIP();
-            dinle();
-        }
-
+        #region IP adresini bul
         private string sunucuIP()
         {
             string strHostName = "";
@@ -87,23 +87,27 @@ namespace sms
 
             return addr[addr.Length - 1].ToString();
         }
+        #endregion IP adresini bul
 
-
+        #region TCP Sunucu
+        private static Socket client;
         private void dinle()
         {
             Socket newsock = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             IPEndPoint iep = new IPEndPoint(IPAddress.Any, 900);
+            newsock.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, true);
             newsock.Bind(iep);
-            newsock.Listen(5);
+            newsock.Listen(10);
+            
             newsock.BeginAccept(new AsyncCallback(AcceptConn), newsock);
         }
-
-        private static Socket client;
-        private static byte[] data = new byte[1024];
+        
         void AcceptConn(IAsyncResult iar)
         {
+            
             Socket oldserver = (Socket)iar.AsyncState;
             client = oldserver.EndAccept(iar);
+            oldserver.Close();
             try
             {
                 DoChangeUIBaglanilanMethod(client.RemoteEndPoint.ToString());
@@ -115,10 +119,12 @@ namespace sms
             }
             Thread receiver = new Thread(new ThreadStart(ReceiveData));
             receiver.Start();
+            dinle();
         }
 
         private void ReceiveData()
         {
+            byte[] data = new byte[1024];
             int recv;
             string stringData;
             bool error=false;
@@ -155,33 +161,21 @@ namespace sms
                 byte[] message = Encoding.UTF8.GetBytes(stringData);
                 client.Send(message);
                 client.Close();
+                dinle();
                 DoChangeUILabelMethod("Bağlantı durduruldu.");
             }
             return;
         }
+        #endregion TCP Sunucu
 
-
+        #region Sms Geldi
         void mesaj_MessageReceived(object sender, MessageInterceptorEventArgs e)
         {
             SmsMessage gelenSms = e.Message as SmsMessage;
         }
-
+        #endregion Sms Geldi
         private void mesajGonder(SmsSeri Sms)
         {
-            /*
-            SmsMessage Sms = new SmsMessage();
-            Sms.Body = mesaj;
-            numara.Replace(",", ";");
-            numara.Replace(" ", "");
-
-            string[] numaralar;
-            numaralar = numara.Split(';');
-            foreach (string x in numaralar)
-            {
-                if (x.Length > 10)
-                { Sms.To.Add(new Recipient(x)); }
-            }
-            */
             SmsMessage yeniSms = new SmsMessage(Sms.To, Sms.Message);
             yeniSms.Send();
             DoChangeUILabelMethod("1 Sms gönderildi.");
