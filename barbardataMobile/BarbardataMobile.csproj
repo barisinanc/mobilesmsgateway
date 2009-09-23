@@ -7,8 +7,8 @@
     <ProjectGuid>{35F6F71E-8505-4C07-8F97-59FB6362150C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>barbardataMobile</RootNamespace>
-    <AssemblyName>barbardataMobile</AssemblyName>
+    <RootNamespace>BarbardataMobile</RootNamespace>
+    <AssemblyName>BarbardataMobile</AssemblyName>
     <ProjectTypeGuids>{4D628B5B-2FBC-4AA6-8C16-197242AEB884};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <PlatformFamilyName>PocketPC</PlatformFamilyName>
     <PlatformID>4118C335-430C-497f-BE48-11C3316B135E</PlatformID>
