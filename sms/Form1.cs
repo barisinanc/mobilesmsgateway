@@ -13,7 +13,7 @@ using System.Net.Sockets;
 using System.Threading;
 using System.IO;
 using System.Xml.Serialization;
-using barbardataMobile;
+using BarbardataMobile;
 
 namespace sms
 {
@@ -196,6 +196,28 @@ namespace sms
             this.Close();
         }
 
+        private void buttonConnect_Click(object sender, EventArgs e)
+        {
+            DoChangeUILabelMethod("Bağlanıyor...");
+            client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            IPEndPoint iep = new IPEndPoint(IPAddress.Parse(textIP.Text), Convert.ToInt32(textPort.Text));
+            client.BeginConnect(iep, new AsyncCallback(Connected), client);
+        }
+
+        void Connected(IAsyncResult iar)
+        {
+            try
+            {
+                client.EndConnect(iar);
+                DoChangeUILabelMethod("Bağlanılan: " + client.RemoteEndPoint.ToString());
+                Thread receiver = new Thread(new ThreadStart(ReceiveData));
+                receiver.Start();
+            }
+            catch (SocketException)
+            {
+                DoChangeUILabelMethod("Bağlantı hatası!");
+            }
+        }
        
     }
 }
