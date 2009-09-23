@@ -5,7 +5,7 @@ using System.Text;
 using System.IO;
 using System.Xml.Serialization;
 
-namespace barbardata
+namespace Barbardata
 {
     public class Serialize
     {

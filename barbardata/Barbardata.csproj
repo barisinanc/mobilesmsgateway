@@ -8,8 +8,8 @@
     <ProjectGuid>{4CC833B1-966D-43FE-B6A0-5B7F3DF4C049}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>barbardata</RootNamespace>
-    <AssemblyName>barbardata</AssemblyName>
+    <RootNamespace>Barbardata</RootNamespace>
+    <AssemblyName>Barbardata</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
