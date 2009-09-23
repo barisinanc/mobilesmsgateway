@@ -29,23 +29,23 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Yeni Mesaj");
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Gelen Mesajlar");
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Gönderilmiş Mesajlar");
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Giden Mesajlar");
-            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Mesajlar", new System.Windows.Forms.TreeNode[] {
-            treeNode11,
-            treeNode12,
-            treeNode13,
-            treeNode14});
-            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Veritabanı Ayarları");
-            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Sunucu Ayarları");
-            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Google Rehber Ayarları");
-            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Ayarlar", new System.Windows.Forms.TreeNode[] {
-            treeNode16,
-            treeNode17,
-            treeNode18});
-            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Google Rehber");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Yeni Mesaj");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Gelen Mesajlar");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Gönderilmiş Mesajlar");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Giden Mesajlar");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Mesajlar", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2,
+            treeNode3,
+            treeNode4});
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Veritabanı Ayarları");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Sunucu Ayarları");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Google Rehber Ayarları");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Ayarlar", new System.Windows.Forms.TreeNode[] {
+            treeNode6,
+            treeNode7,
+            treeNode8});
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Google Rehber");
             this.textKime = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textMesaj = new System.Windows.Forms.TextBox();
@@ -61,6 +61,8 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.baglanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.textPort = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -130,7 +132,7 @@
             // 
             // textIP
             // 
-            this.textIP.Location = new System.Drawing.Point(338, 382);
+            this.textIP.Location = new System.Drawing.Point(315, 382);
             this.textIP.Name = "textIP";
             this.textIP.Size = new System.Drawing.Size(100, 20);
             this.textIP.TabIndex = 6;
@@ -138,7 +140,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(312, 382);
+            this.label2.Location = new System.Drawing.Point(289, 382);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(20, 13);
             this.label2.TabIndex = 7;
@@ -148,30 +150,30 @@
             // 
             this.treeView1.Location = new System.Drawing.Point(0, 27);
             this.treeView1.Name = "treeView1";
-            treeNode11.Name = "YeniMesaj";
-            treeNode11.Text = "Yeni Mesaj";
-            treeNode12.Name = "GelenMesajlar";
-            treeNode12.Text = "Gelen Mesajlar";
-            treeNode13.Name = "GonderilmisMesajlar";
-            treeNode13.Text = "Gönderilmiş Mesajlar";
-            treeNode14.Name = "GidenMesajlar";
-            treeNode14.Text = "Giden Mesajlar";
-            treeNode15.Name = "Mesajlar";
-            treeNode15.Text = "Mesajlar";
-            treeNode16.Name = "VeritabaniAyarlari";
-            treeNode16.Text = "Veritabanı Ayarları";
-            treeNode17.Name = "SunucuAyarlari";
-            treeNode17.Text = "Sunucu Ayarları";
-            treeNode18.Name = "GoogleRehberAyarlari";
-            treeNode18.Text = "Google Rehber Ayarları";
-            treeNode19.Name = "Ayarlar";
-            treeNode19.Text = "Ayarlar";
-            treeNode20.Name = "GoogleRehber";
-            treeNode20.Text = "Google Rehber";
+            treeNode1.Name = "YeniMesaj";
+            treeNode1.Text = "Yeni Mesaj";
+            treeNode2.Name = "GelenMesajlar";
+            treeNode2.Text = "Gelen Mesajlar";
+            treeNode3.Name = "GonderilmisMesajlar";
+            treeNode3.Text = "Gönderilmiş Mesajlar";
+            treeNode4.Name = "GidenMesajlar";
+            treeNode4.Text = "Giden Mesajlar";
+            treeNode5.Name = "Mesajlar";
+            treeNode5.Text = "Mesajlar";
+            treeNode6.Name = "VeritabaniAyarlari";
+            treeNode6.Text = "Veritabanı Ayarları";
+            treeNode7.Name = "SunucuAyarlari";
+            treeNode7.Text = "Sunucu Ayarları";
+            treeNode8.Name = "GoogleRehberAyarlari";
+            treeNode8.Text = "Google Rehber Ayarları";
+            treeNode9.Name = "Ayarlar";
+            treeNode9.Text = "Ayarlar";
+            treeNode10.Name = "GoogleRehber";
+            treeNode10.Text = "Google Rehber";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode15,
-            treeNode19,
-            treeNode20});
+            treeNode5,
+            treeNode9,
+            treeNode10});
             this.treeView1.Size = new System.Drawing.Size(172, 305);
             this.treeView1.TabIndex = 8;
             // 
@@ -214,11 +216,29 @@
             this.baglanToolStripMenuItem.Text = "Bağlan";
             this.baglanToolStripMenuItem.Click += new System.EventHandler(this.baglanToolStripMenuItem_Click);
             // 
+            // textPort
+            // 
+            this.textPort.Location = new System.Drawing.Point(318, 409);
+            this.textPort.Name = "textPort";
+            this.textPort.Size = new System.Drawing.Size(97, 20);
+            this.textPort.TabIndex = 11;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(280, 416);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(29, 13);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Port:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(687, 489);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.textPort);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.treeView1);
@@ -260,6 +280,8 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem baglanToolStripMenuItem;
+        private System.Windows.Forms.TextBox textPort;
+        private System.Windows.Forms.Label label3;
     }
 }
 

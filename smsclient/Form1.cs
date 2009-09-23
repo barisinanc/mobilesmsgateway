@@ -13,7 +13,7 @@ using System.IO;
 using Microsoft.WindowsMobile.PocketOutlook;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
-using barbardata;
+using Barbardata;
 namespace smsclient
 {
     public partial class Form1 : Form
@@ -22,6 +22,7 @@ namespace smsclient
         {
             InitializeComponent();
             textIP.Text = "169.254.2.1";
+            textPort.Text = "900";
             buttonBaglantiKes.Enabled = false;
             this.FormClosed += new FormClosedEventHandler(Form1_FormClosed);
         }
@@ -68,28 +69,13 @@ namespace smsclient
         }
 
         private static Socket client;
-        private static byte[] data = new byte[1024];
-
+       
         private void buttonBaglan_Click(object sender, EventArgs e)
         {
             DoChangeUILabelMethod("Bağlanıyor...");
             client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-            IPEndPoint iep = new IPEndPoint(IPAddress.Parse(textIP.Text), 900);
+            IPEndPoint iep = new IPEndPoint(IPAddress.Parse(textIP.Text), Convert.ToInt32(textPort.Text));
             client.BeginConnect(iep, new AsyncCallback(Connected), client);
-        }
-
-        private void mesajGonder(string kime, string mesaj)
-        {
-            SmsSeri yeniSms = new SmsSeri();
-            string[] liste = kime.Replace(',', ';').Split(';');
-            foreach (string x in liste)
-            {
-                yeniSms.AddRecipient(x);
-            }
-            yeniSms.Message = mesaj;
-            //string gidecekVeri = "Sms To:" + kime + "|Mesaj:" + mesaj + "";
-            byte[] message = Serialize.Object2ByteArray(yeniSms,typeof(SmsSeri));
-            client.BeginSend(message, 0, message.Length, 0, new AsyncCallback(SendData), client);
         }
 
         void Connected(IAsyncResult iar)
@@ -116,7 +102,8 @@ namespace smsclient
         }
 
         void ReceiveData()
-        {
+        { 
+            byte[] data = new byte[1024];
             int recv;
             string stringData;
             while (true)
@@ -143,6 +130,20 @@ namespace smsclient
             string stringData = "bye";
             byte[] message = Encoding.UTF8.GetBytes(stringData);
             client.Send(message);
+        }
+
+        private void mesajGonder(string kime, string mesaj)
+        {
+            SmsSeri yeniSms = new SmsSeri();
+            string[] liste = kime.Replace(',', ';').Split(';');
+            foreach (string x in liste)
+            {
+                yeniSms.AddRecipient(x);
+            }
+            yeniSms.Message = mesaj;
+            //string gidecekVeri = "Sms To:" + kime + "|Mesaj:" + mesaj + "";
+            byte[] message = Serialize.Object2ByteArray(yeniSms, typeof(SmsSeri));
+            client.BeginSend(message, 0, message.Length, 0, new AsyncCallback(SendData), client);
         }
 
         private void buttonBaglantiKes_Click(object sender, EventArgs e)
